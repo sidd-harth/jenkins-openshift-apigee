@@ -26,7 +26,7 @@
 
     </Flows>
     <HTTPProxyConnection>
-        <BasePath>/openshift</BasePath>
+        <BasePath>/openshift-jenkins</BasePath>
         <Properties/>
         <VirtualHost>default</VirtualHost>
         <VirtualHost>secure</VirtualHost>
