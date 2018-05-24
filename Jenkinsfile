@@ -9,7 +9,7 @@ pipeline {
     echo "Application Name - ${APP_NAME}"
     echo "Project Name - ${PROJECT_NAME}"
     echo "Master Host - ${MASTER_URL}"
-	//echo "Apigee Username - ${APIGEE_USERNAME}"
+	echo "Apigee Username - ${APIGEE_USERNAME}"
 	
    }
   }
