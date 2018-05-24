@@ -55,7 +55,7 @@ public class CheckResourceTest {
         mockMvc.perform(get("/check/openshift")
                 .accept(MediaType.APPLICATION_JSON))
                 .andExpect(status().isOk())
-                .andExpect(jsonPath("$.title", Matchers.is("Openshift-Jenkins")))
+                .andExpect(jsonPath("$.title", Matchers.is("Apigee-Openshift-Jenkins")))
                 .andExpect(jsonPath("$.*", Matchers.hasSize(2)));
     }
 
