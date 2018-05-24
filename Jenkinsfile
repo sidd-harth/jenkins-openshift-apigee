@@ -1,5 +1,5 @@
 def mvn = "mvn -s nexusconfigurations/nexus.xml"
-
+def rootPOM = "Z:/Jenkins/workspace/APIGEE-Openshift-JENKINS/apigee-proxy-files/openshift-jenkins-hello/pom.xml"
 pipeline {
  agent any
 
@@ -105,7 +105,7 @@ pipeline {
   stage('Deploy in APIGEE') {
    steps {
 	   withMaven(maven: 'apache-maven-3.3.9') {
-     sh "mvn -f Z:/Jenkins/workspace/APIGEE-Openshift-JENKINS/apigee-proxy-files/openshift-jenkins-hello/pom.xml install -Pprod -Dusername=${apigee-username} -Dpassword=${apigee-password}"
+     sh "mvn -f ${rootPOM} install -Pprod -Dusername=${apigee-username} -Dpassword=${apigee-password}"
     }
    }
   }
