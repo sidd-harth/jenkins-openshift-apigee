@@ -9,7 +9,7 @@ pipeline {
     echo "Application Name - ${APP_NAME}"
     echo "Project Name - ${PROJECT_NAME}"
     echo "Master Host - ${MASTER_URL}"
-	//echo "Apigee Username - ${apigee-username}"
+	//echo "Apigee Username - ${APIGEE_USERNAME}"
 	
    }
   }
@@ -105,7 +105,7 @@ pipeline {
   stage('Deploy in APIGEE') {
    steps {
 	   withMaven(maven: 'apache-maven-3.3.9') {
-     sh "mvn -f ${rootPOM} install -Pprod -Dusername=${apigee-username} -Dpassword=${apigee-password}"
+     sh "mvn -f ${rootPOM} install -Pprod -Dusername=${APIGEE_USERNAME} -Dpassword=${APIGEE_PASSWORD}"
     }
    }
   }
