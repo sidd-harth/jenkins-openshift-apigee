@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<ProxyEndpoint name="default">
+    <Description/>
+    <FaultRules/>
+    <PreFlow name="PreFlow">
+        <Request>
+            <Step>
+                <Name>Verify-API-Key-1</Name>
+            </Step>
+            <Step>
+                <Name>Quota-1</Name>
+            </Step>
+        </Request>
+        <Response>
+            <Step>
+                <Name>JSON-to-XML-1</Name>
+				<Condition>request.queryparam.type="xml"</Condition>
+            </Step>
+        </Response>
+    </PreFlow>
+    <PostFlow name="PostFlow">
+        <Request/>
+        <Response/>
+    </PostFlow>
+    <Flows>
+
+    </Flows>
+    <HTTPProxyConnection>
+        <BasePath>/openshift</BasePath>
+        <Properties/>
+        <VirtualHost>default</VirtualHost>
+        <VirtualHost>secure</VirtualHost>
+    </HTTPProxyConnection>
+    <RouteRule name="default">
+        <TargetEndpoint>default</TargetEndpoint>
+    </RouteRule>
+</ProxyEndpoint>
