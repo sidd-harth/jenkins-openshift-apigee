@@ -9,6 +9,8 @@ pipeline {
     echo "Application Name - ${APP_NAME}"
     echo "Project Name - ${PROJECT_NAME}"
     echo "Master Host - ${MASTER_URL}"
+	echo "Apigee Username - ${apigee-username}"
+	
    }
   }
 
@@ -100,6 +102,13 @@ pipeline {
    }
   }
   
+  stage('Deploy in APIGEE') {
+   steps {
+	   withMaven(maven: 'apache-maven-3.3.9') {
+     bat "mvn -f $WORKSPACE\apigee-proxy-files\openshift-jenkins-hello\pom.xml install -Pprod -Dusername=${apigee-username} -Dpassword=${apigee-password}"
+    }
+   }
+  }
   /*
   stage('Integration Tests') {
    steps {
