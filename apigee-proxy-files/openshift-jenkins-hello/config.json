@@ -10,7 +10,7 @@
                     "tokens": [
                         {
                             "xpath": "/TargetEndpoint/HTTPTargetConnection/URL",
-                            "value": "http://openshift-jenkins-apigee.7e14.starter-us-west-2.openshiftapps.com"
+                            "value": "http://openshift-app-jenkins-apigee.7e14.starter-us-west-2.openshiftapps.com"
                         }
                     ]
                 }
@@ -26,7 +26,7 @@
                     "tokens": [
                         {
                             "xpath": "/TargetEndpoint/HTTPTargetConnection/URL",
-                            "value": "http://openshift-jenkins-apigee.7e14.starter-us-west-2.openshiftapps.com"
+                            "value": "http://openshift-app-jenkins-apigee.7e14.starter-us-west-2.openshiftapps.com"
                         }
                     ]
                 }
