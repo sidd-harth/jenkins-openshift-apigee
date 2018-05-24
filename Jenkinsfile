@@ -105,7 +105,7 @@ pipeline {
   stage('Deploy in APIGEE') {
    steps {
 	   withMaven(maven: 'apache-maven-3.3.9') {
-     bat "mvn -f $WORKSPACE\apigee-proxy-files\openshift-jenkins-hello\pom.xml install -Pprod -Dusername=${apigee-username} -Dpassword=${apigee-password}"
+     bat "mvn -f $WORKSPACE/apigee-proxy-files/openshift-jenkins-hello/pom.xml install -Pprod -Dusername=${apigee-username} -Dpassword=${apigee-password}"
     }
    }
   }
